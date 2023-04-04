@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Movie} from "../types/movie"
 
 function MovieList() {
+    //Define Display Data
     const [movieData, setMovieData] = useState<Movie[]>([]);
-    const fetchData = async () => {
-        const rsp = await fetch('https://localhost:7248/movie');
-        const temp = await rsp.json();
-        setMovieData(temp);
-    }
+    //Only Update on Change
+    useEffect (() => {
+        //Fetch Data with Asyncronous Request
+        const fetchData = async () => {
+            const rsp = await fetch('https://localhost:7248/movie');
+            const temp = await rsp.json();
+            setMovieData(temp);
+        }
+        fetchData();
+}, []);
+    
 
-    fetchData();
+    //Create Frontend Code
     return (
         <React.Fragment>
         <div className="row">
