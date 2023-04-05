@@ -4,7 +4,7 @@
     "api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "food",
+      "launchUrl": "movie",
       "applicationUrl": "https://localhost:4000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
