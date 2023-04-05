@@ -23,8 +23,11 @@ namespace FullStack.Controllers
         //Define Get Method response
         public IEnumerable<Movie> Get()
         {
-            //Retrive Data from context
-            var data = context.Movies.ToArray();
+            //Retrive + Filter Data from context
+            var data = context.Movies
+                .Where(x => x.Edited == "Yes")
+                .OrderBy(x => x.Title)
+                .ToArray();
             //Return Data
             return data;
         }

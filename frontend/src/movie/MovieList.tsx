@@ -8,7 +8,7 @@ function MovieList() {
     useEffect (() => {
         //Fetch Data with Asyncronous Request
         const fetchData = async () => {
-            const rsp = await fetch('https://localhost:7248/movie');
+            const rsp = await fetch('https://localhost:4000/movie');
             const temp = await rsp.json();
             setMovieData(temp);
         }
